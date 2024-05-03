@@ -8,7 +8,7 @@
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:WithdrawAmountPage}"
+        ContentTemplate="{DataTemplate local:PreferenceSettings}"
         Route="MainPage" />
 
 </Shell>
