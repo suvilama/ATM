@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ATM.TransactionSuccessPage"
+             Title="TransactionSuccessPage">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Text="Home" FontSize="18" HorizontalOptions="Start" />
+        <Label Grid.Row="0" Grid.Column="2" Text="Settings" FontSize="18" HorizontalOptions="End" />
+
+        <VerticalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="John Doe" FontSize="24" HorizontalOptions="Center" />
+            <Label Text="Thank you!"  FontSize="32" HorizontalOptions="Center" Margin="0,20,0,0" />
+            <Image Source="checkmark.png" HeightRequest="50" WidthRequest="50" Margin="0,20,0,0" />
+            <Label Text="Your transaction is successful."  FontSize="18" HorizontalOptions="Center" Margin="0,20,0,0" />
+            <Label Text="A receipt of this transaction has been emailed to you."  FontSize="18" HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>
