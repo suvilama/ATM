@@ -7,6 +7,16 @@ public partial class WithdrawAmountPage : ContentPage
         InitializeComponent();
     }
 
+    private void Homepage(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new OperationSelectionPage());
+
+    }
+
+    private void Settingspage(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new PreferenceSettings());
+    }
 
     private void CancelButtonClicked(object sender, EventArgs e)
     {
@@ -21,7 +31,7 @@ public partial class WithdrawAmountPage : ContentPage
 
         // Perform deposit operation with the entered amount
         // ...
-
+        Navigation.PushAsync(new TransactionSuccessPage());
         // Navigate to the next page or show a success message
     }
 }
