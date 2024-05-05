@@ -17,8 +17,8 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Text="Home" FontSize="18" HorizontalOptions="Start" />
-        <Label Grid.Row="0" Grid.Column="2" Text="Settings" FontSize="18" HorizontalOptions="End" />
+        <Button  Grid.Row="0" Grid.Column="0" Text="Home" Clicked="Homepage" FontSize="15" HorizontalOptions="Start"/>
+        <Button Grid.Row="0" Grid.Column="2" Text="Settings" Clicked="Settingspage" FontSize="15" HorizontalOptions="End" />
 
         <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="Center">
             <Label Text="John Doe" FontSize="24" HorizontalOptions="Center" />

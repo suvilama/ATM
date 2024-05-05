@@ -16,13 +16,15 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Text="Home" FontSize="18" HorizontalOptions="Start" />
-        <Label Grid.Row="0" Grid.Column="2" Text="Settings" FontSize="18" HorizontalOptions="End" />
+        <Button  Grid.Row="0" Grid.Column="0" Text="Home" Clicked="Homepage" FontSize="15" HorizontalOptions="Start"/>
+        <Button Grid.Row="0" Grid.Column="2" Text="Settings" Clicked="Settingspage" FontSize="15" HorizontalOptions="End" />
 
-        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="Hi, John Doe!" FontSize="24" HorizontalOptions="Center" />
+       
 
         <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="Center">
-            <Label Text="Choose your operation" FontSize="18" HorizontalOptions="Center" Margin="0,0,0,20" />
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="Hi, John Doe!" FontSize="24" HorizontalOptions="Center" Margin="0,0,0, 20" />
+            
+            <Label Text="Choose your operation" FontSize="22" HorizontalOptions="Center" Margin="0,0,0,20" />
             <Button Text="Deposit" Clicked="DepositButtonClicked" FontSize="18" Margin="0,0,0,10" />
             <Button Text="Withdrawal" Clicked="WithdrawalButtonClicked" FontSize="18" Margin="0,0,0,10" />
             <Button Text="Transaction Feed" Clicked="TransactionFeedButtonClicked" FontSize="18" Margin="0,0,0,10" />
