@@ -9,11 +9,24 @@
         <Label Text="Please Add Your Login Details!" FontSize="18" HorizontalOptions="Center" Margin="0,20,0,40" />
 
         <Entry x:Name="phoneNumberEntry" Placeholder="Phone number" />
-        <Entry x:Name="pinEntry" Placeholder="PIN" IsPassword="True" />
+        <Entry x:Name="pinEntry" Placeholder="PIN" IsPassword="true" />
 
         <Button Text="Log In" Clicked="LogInButtonClicked" VerticalOptions="EndAndExpand" Margin="0,40,0,0" />
-
         
+        
+        <HorizontalStackLayout HorizontalOptions="Center" Padding="20" Spacing="10">
+            <Label Text="Don't Already Have an account? " VerticalOptions="Center" />
+            <Label Text="Sign Up!" TextColor="CornflowerBlue">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelClicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+
+
+        </HorizontalStackLayout>
+    
+    
     </VerticalStackLayout>
 
 </ContentPage>
