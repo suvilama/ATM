@@ -7,6 +7,8 @@
         <Label Text="Create Your Account" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold" />
         <Label Text="Create Your Account and Get Started Today!" FontSize="18" HorizontalOptions="Center" Margin="0,20,0,40" />
 
+
+        <Entry x:Name="firstLastNameEntry" Placeholder="First and Last Name" WidthRequest="800"/>
         <Entry x:Name="phoneNumberEntry" Placeholder="Phone number" WidthRequest="800"/>
         <Entry x:Name="pinEntry" Text="{Binding pinEntry}" Placeholder="PIN" IsPassword="true" WidthRequest="800"/>
         
@@ -18,7 +20,7 @@
         
         
         <!-- This is the output if the users confirm pin does not match the original pin-->
-        <Label x:Name="ErrorMessageLabel" Text="The confirm pin does not match." TextColor="Red" IsVisible="False" />
+        <Label x:Name="ErrorMessageLabel" Text="The confirm pin does not match." HorizontalOptions="Center" TextColor="Red" IsVisible="False" />
 
 
 

@@ -1,36 +1,49 @@
 using System.Diagnostics;
 
-namespace ATM;
-
-public partial class SignUpPage : ContentPage
+namespace ATM
 {
-    
-    public SignUpPage()
-	{
-		InitializeComponent();
-        
-    }
-
-    private void SignUpButtonClicked(object sender, EventArgs e)
+    public partial class SignUpPage : ContentPage
     {
-        var confirmPin = confirmPinEntry.Text;
-        var originalPin = pinEntry.Text; // Assuming pinEntry is the entry for the original PIN
-
-        
-        if (confirmPin != originalPin)
+        public SignUpPage()
         {
-            ErrorMessageLabel.IsVisible = true;
+            InitializeComponent();
         }
 
-        else
+        private async void SignUpButtonClicked(object sender, EventArgs e)
         {
-            ErrorMessageLabel.IsVisible = false;
+            var name = firstLastNameEntry.Text;
+            string phoneNumberText = phoneNumberEntry.Text;
+            long phoneNumber = long.Parse(phoneNumberText);
+            var pin = pinEntry.Text;
 
-            Navigation.PushAsync(new OperationSelectionPage());
+            var confirmPin = confirmPinEntry.Text;
+            var originalPin = pinEntry.Text; // Assuming pinEntry is the entry for the original PIN
+
+            if (confirmPin != originalPin)
+            {
+                ErrorMessageLabel.IsVisible = true;
+            }
+            else
+            {
+                User newUser = new User
+                {
+                    Name = name,
+                    PhoneNumber = phoneNumber,
+                    Password = pin
+                };
+
+                await App.Database.SaveUserAsync(newUser);
+
+                // Navigate to another page after sign-up
+                await Navigation.PushAsync(new MainPage());
+                ErrorMessageLabel.IsVisible = false;
+            }
         }
     }
-
-    
-
-    
 }
+
+
+
+
+
+

@@ -2,20 +2,22 @@ namespace ATM;
 
 public partial class WithdrawAmountPage : ContentPage
 {
-    public WithdrawAmountPage()
+    private readonly long _phoneNumber;
+    public WithdrawAmountPage(long phoneNumber)
     {
         InitializeComponent();
+        _phoneNumber = phoneNumber;
     }
 
     private void Homepage(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new OperationSelectionPage());
+        Navigation.PushAsync(new OperationSelectionPage(_phoneNumber));
 
     }
 
     private void Settingspage(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new PreferenceSettings());
+        Navigation.PushAsync(new PreferenceSettings(_phoneNumber));
     }
 
     private void CancelButtonClicked(object sender, EventArgs e)
@@ -31,7 +33,7 @@ public partial class WithdrawAmountPage : ContentPage
 
         // Perform deposit operation with the entered amount
         // ...
-        Navigation.PushAsync(new TransactionSuccessPage());
+        Navigation.PushAsync(new TransactionSuccessPage(_phoneNumber));
         // Navigate to the next page or show a success message
     }
 }

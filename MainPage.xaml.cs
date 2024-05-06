@@ -2,40 +2,37 @@
 {
     public partial class MainPage : ContentPage
     {
+        private  long phoneNumber;
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void LogInButtonClicked(object sender, EventArgs e)
+
+        private async void LogInButtonClicked(object sender, EventArgs e)
         {
-           
-            string phoneNumber = phoneNumberEntry.Text;
-            
+            string phoneNumberText = phoneNumberEntry.Text;
+            long phoneNumber = long.Parse(phoneNumberText); // Get phone number from entry field
             string pin = pinEntry.Text;
-            bool isAuthenticated = AuthenticateUser(phoneNumber, pin);
-            if (isAuthenticated)
+
+            User existingUser = await App.Database.GetUserAsync(phoneNumber); // Fetch user by phone number
+
+            if (existingUser != null && existingUser.Password == pin)
             {
-                Navigation.PushAsync(new OperationSelectionPage());
+                // Successful login, navigate to main page
+                await Navigation.PushAsync(new OperationSelectionPage(phoneNumber)); // Pass phone number here
             }
             else
             {
-                // Show error message
+                // Display login failed message
             }
         }
 
-        private bool AuthenticateUser(string username, string password)
-        {
-            //This is just some dummy data that i used to login before i get any sort of database to store user values
-            if (username == "demo" && password == "password")
-            {
-                return true;
-            }
-            return false;
-        }
+
 
         private void OnLabelClicked(object sender, TappedEventArgs e)
         {
+           
             Navigation.PushAsync(new SignUpPage());
         }
     }
