@@ -28,9 +28,9 @@
         <Label Grid.Row="0" Grid.Column="2" Text="Settings" FontSize="18" HorizontalOptions="End" />-->
 
         <VerticalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="John Doe" FontSize="24" HorizontalOptions="Center" />
+            <Label x:Name="GreetingLabel" Text="{Binding GreetingLabel}" FontSize="24" HorizontalOptions="Center" />
             <Label Text="Thank you!"  FontSize="32" HorizontalOptions="Center" Margin="0,20,0,0" />
-            <Image Source="checkmark.png" HeightRequest="50" WidthRequest="50" Margin="0,20,0,0" />
+            <Image Source="C:\Users\samue\Source\Repos\ATMm\Resources\Images\checkmark.svg" HeightRequest="50" WidthRequest="50" Margin="0,20,0,0" />
             <Label Text="Your transaction is successful."  FontSize="18" HorizontalOptions="Center" Margin="0,20,0,0" />
             <Label Text="A receipt of this transaction has been emailed to you."  FontSize="18" HorizontalOptions="Center" />
         </VerticalStackLayout>

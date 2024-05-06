@@ -21,7 +21,7 @@
         <Button Grid.Row="0" Grid.Column="2" Text="Settings" Clicked="Settingspage" FontSize="15" HorizontalOptions="End" />
 
         <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="Center">
-            <Label Text="John Doe" FontSize="24" HorizontalOptions="Center" />
+            <Label x:Name="GreetingLabel" Text="{Binding GreetingLabel}" FontSize="24" HorizontalOptions="Center" />
             <Label Text="Enter the amount you wish to withdraw" FontSize="18" HorizontalOptions="Center" Margin="0,0,0,20" />
             <Entry x:Name="withdrawAmountEntry" Keyboard="Numeric" FontSize="18" WidthRequest="200" HorizontalOptions="Center" />
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">

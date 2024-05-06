@@ -22,7 +22,7 @@
        
 
         <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="Center">
-            <Label x:Name="GreetingLabel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding GreetingLabel}" FontSize="24" HorizontalOptions="Center" Margin="0,0,0, 20" />
+            <Label x:Name="GreetingLabel" Text="{Binding GreetingLabel}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"  FontSize="24" HorizontalOptions="Center" Margin="0,0,0, 20" />
             
             <Label Text="What would you like to do today?" FontSize="22" HorizontalOptions="Center" Margin="0,0,0,20" />
             <Button Text="Deposit" Clicked="DepositButtonClicked" FontSize="18" Margin="0,0,0,10" />

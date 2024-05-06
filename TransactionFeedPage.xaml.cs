@@ -11,6 +11,22 @@ namespace ATM
             LoadTransactions();
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Get the user's phone number from wherever it's stored (e.g., settings or login)
+
+            // Fetch the user based on the phone number
+            User existingUser = await App.Database.GetUserAsync(_phoneNumber);
+
+            // Update the greeting label with the user's name if the user exists
+            if (existingUser != null)
+            {
+                GreetingLabel.Text = $"{existingUser.Name}";
+            }
+        }
+
         private async Task LoadTransactions()
         {
             try
