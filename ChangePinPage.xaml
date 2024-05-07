@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ATM.ChangePinPage"
+             Title="Change Pin">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Create Your Account" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold" />
+        <Label Text="Create Your Account and Get Started Today!" FontSize="18" HorizontalOptions="Center" Margin="0,20,0,40" />
+
+
+        
+        
+
+
+        <Entry x:Name="newPinEntry" Text="{Binding pinEntry}" Placeholder="Enter your new PIN number" IsPassword="true" WidthRequest="800"/>
+        <Entry x:Name="confirmNewPinEntry" Text="{Binding confirmPinEntry}" Placeholder="Confirm your new pin number" IsPassword="true" WidthRequest="800"/>
+        <Button x:Name="ChangeButton" Text="Change Pin" Clicked="ChangeButtonClicked" VerticalOptions="EndAndExpand" WidthRequest="200" Margin="0,40,0,0" />
+
+
+
+        <!-- This is the output if the users confirm pin does not match the original pin-->
+        <Label x:Name="ErrorMessageLabel" Text="The confirm pin does not match." HorizontalOptions="Center" TextColor="Red" IsVisible="False" />
+
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

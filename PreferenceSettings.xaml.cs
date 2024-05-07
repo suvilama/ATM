@@ -34,4 +34,9 @@ public partial class PreferenceSettings : ContentPage
     {
         Navigation.PushAsync(new PreferenceSettings(_phoneNumber));
     }
+
+    private void ChangePinButtonClicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new ChangePinPage(_phoneNumber));
+    }
 }
