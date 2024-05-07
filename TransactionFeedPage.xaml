@@ -26,13 +26,17 @@
         <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Text="Transaction Feed" FontSize="22" HorizontalOptions="Center" Margin="0,0,0,0" />
 
         <!-- ListView to display transaction feed -->
-        <ListView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" x:Name="TransactionListView">
+        <ListView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding DepositTransactions}" x:Name="TransactionListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="10">
                             <Label Text="{Binding TransactionType}" FontSize="18" />
-                            <Label Text="{Binding Amount}" FontSize="16" />
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding Sign}" FontSize= "16" />
+                                <Label Text="$ " FontSize= "16" />
+                                <Label Text="{Binding Amount}" FontSize="16" />
+                            </HorizontalStackLayout>
                             <Label Text="{Binding Date}" FontSize="14" />
                         </StackLayout>
                     </ViewCell>

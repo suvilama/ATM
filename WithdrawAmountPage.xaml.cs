@@ -3,10 +3,13 @@ namespace ATM;
 public partial class WithdrawAmountPage : ContentPage
 {
     private readonly long _phoneNumber;
+    private readonly DatabaseService _databaseService;
     public WithdrawAmountPage(long phoneNumber)
     {
         InitializeComponent();
         _phoneNumber = phoneNumber;
+        _databaseService = App.Database;
+
     }
     protected override async void OnAppearing()
     {
@@ -41,15 +44,34 @@ public partial class WithdrawAmountPage : ContentPage
         Navigation.PopAsync();
     }
 
-    private void ConfirmButtonClicked(object sender, EventArgs e)
+    private async void ConfirmButtonClicked(object sender, EventArgs e)
     {
-        // Get the entered deposit amount
-        string withdrawAmount = withdrawAmountEntry.Text;
+        string withdrawalAmountText = withdrawAmountEntry.Text;
+        if (!decimal.TryParse(withdrawalAmountText, out decimal withdrawalAmount))
+        {
+            // Handle invalid input
+            return;
+        }
 
-        // Perform deposit operation with the entered amount
-        // ...
-        Navigation.PushAsync(new TransactionSuccessPage(_phoneNumber));
-        // Navigate to the next page or show a success message
+        try
+        {
+            // Make the withdrawal using the database service
+            await App.Database.MakeWithdrawal(_phoneNumber, withdrawalAmount);
+
+            // Navigate to success page or show success message
+            await Navigation.PushAsync(new TransactionSuccessPage(_phoneNumber));
+        }
+        catch (InvalidOperationException ex)
+        {
+            // Handle insufficient balance or user not found errors
+            await DisplayAlert("Error", ex.Message, "OK");
+        }
+        catch (Exception ex)
+        {
+            // Handle other unexpected errors
+            await DisplayAlert("Error", "An error occurred while processing your request.", "OK");
+        }
     }
 }
+
 

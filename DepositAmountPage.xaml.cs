@@ -35,19 +35,11 @@ namespace ATM
                 return;
             }
 
-            User user = await _databaseService.GetUserAsync(_phoneNumber);
-            if (user != null)
-            {
-                user.AccountBalance += depositAmount; // Update account balance
-                await _databaseService.SaveUserAsync(user); // Save changes to database
+            // Make the deposit using the database service
+            await App.Database.MakeDeposit(_phoneNumber, depositAmount);
 
-                // Navigate to success page or show success message
-                await Navigation.PushAsync(new TransactionSuccessPage(_phoneNumber));
-            }
-            else
-            {
-                // Handle user not found
-            }
+            // Navigate to success page or show success message
+            await Navigation.PushAsync(new TransactionSuccessPage(_phoneNumber));
         }
 
         private async void CancelButtonClicked(object sender, EventArgs e)
