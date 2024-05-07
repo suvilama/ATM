@@ -43,7 +43,7 @@ namespace ATM
         public Task<int> SaveTransactionAsync(Transaction transaction)
 
         {
-            Debug.WriteLine($"Saving transaction - PhoneNumber: {transaction.PhoneNumber}, TransactionType: {transaction.TransactionType}, Amount: {transaction.Amount}, Date: {transaction.Date}");
+           
             return _database.InsertAsync(transaction);
         }
 
@@ -51,15 +51,7 @@ namespace ATM
         {
             try
             {
-                /*Debug.WriteLine($"Getting transactions for phone number: {phoneNumber}");
-
-                var transactions = await _database.Table<Transaction>()
-                    .Where(t => t.PhoneNumber == phoneNumber)
-                    .ToListAsync();
-
-                // Log the transactions retrieved
               
-                return transactions;*/
                 return await _database.Table<Transaction>().ToListAsync();
             }
             catch (Exception ex)

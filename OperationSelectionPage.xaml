@@ -23,12 +23,19 @@
 
         <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="Center">
             <Label x:Name="GreetingLabel" Text="{Binding GreetingLabel}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"  FontSize="24" HorizontalOptions="Center" Margin="0,0,0, 20" />
+            <Label Text="Account Balance:" FontSize="22" HorizontalOptions="Center" Margin="0,0,0,20" />
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="$" FontSize="50"  Margin="0,0,0,20" />
+                <Label x:Name="BalanceLabel" Text="{Binding BalanceLabel}" FontSize="50"  Margin="0,0,0,20" />
+
+
+            </HorizontalStackLayout>
             
             <Label Text="What would you like to do today?" FontSize="22" HorizontalOptions="Center" Margin="0,0,0,20" />
             <Button Text="Deposit" Clicked="DepositButtonClicked" FontSize="18" Margin="0,0,0,10" />
             <Button Text="Withdrawal" Clicked="WithdrawalButtonClicked" FontSize="18" Margin="0,0,0,10" />
             <Button Text="Transaction Feed" Clicked="TransactionFeedButtonClicked" FontSize="18" Margin="0,0,0,10" />
-            <Button Text="Open New Account" Clicked="OpenNewAccountButtonClicked" FontSize="18" />
+            
         </StackLayout>
 
     </Grid>

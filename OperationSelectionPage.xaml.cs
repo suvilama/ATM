@@ -22,7 +22,11 @@ namespace ATM
             if (existingUser != null)
             {
                 GreetingLabel.Text = $"Welcome {existingUser.Name}!";
+                BalanceLabel.Text = $"{existingUser.AccountBalance}";
+
             }
+
+
         }
         private void Homepage(object sender, EventArgs e)
         {
