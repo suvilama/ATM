@@ -6,7 +6,9 @@ namespace ATM
         public OperationSelectionPage(long phoneNumber)
         {
             InitializeComponent();
-            _phoneNumber = phoneNumber; 
+            _phoneNumber = phoneNumber;
+            
+
         }
 
         protected override async void OnAppearing()

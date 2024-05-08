@@ -1,3 +1,6 @@
+
+using ATM.Resources.Styles;
+
 namespace ATM;
 
 public partial class PreferenceSettings : ContentPage
@@ -7,7 +10,9 @@ public partial class PreferenceSettings : ContentPage
 	{
 		InitializeComponent();
         _phoneNumber = phoneNumber;
-	}
+
+       
+    }
     protected override async void OnAppearing()
     {
         base.OnAppearing();
@@ -38,5 +43,29 @@ public partial class PreferenceSettings : ContentPage
     private void ChangePinButtonClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new ChangePinPage(_phoneNumber));
+    }
+
+    private void DarkModeSwitch_Toggled(object sender, ToggledEventArgs e)
+    {
+        bool isDarkMode = e.Value;
+        ApplyDarkMode(isDarkMode);
+    }
+    private void ApplyDarkMode(bool isDarkMode)
+    {
+        Preferences.Set("DarkModeEnabled", isDarkMode);
+        if (isDarkMode)
+        {
+            // Load Dark theme resource dictionary
+            ResourceDictionary darkTheme = new Dark();
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(darkTheme);
+        }
+        else
+        {
+            // Load Light theme or other theme resource dictionary
+            ResourceDictionary lightTheme = new Light();
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(lightTheme);
+        }
     }
 }

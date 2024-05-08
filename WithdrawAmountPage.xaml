@@ -4,7 +4,7 @@
              x:Class="ATM.WithdrawAmountPage"
              Title="WithdrawAmountPage">
 
-    <Grid Padding="20">
+    <Grid Padding="20" BackgroundColor="#97c5de">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />

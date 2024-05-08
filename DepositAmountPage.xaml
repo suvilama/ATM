@@ -4,7 +4,7 @@
              x:Class="ATM.DepositAmountPage"
              Title="DepositAmountPage">
 
-    <Grid Padding="20">
+    <Grid Padding="20" BackgroundColor="#97c5de">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
