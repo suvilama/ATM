@@ -30,7 +30,7 @@
                 <Switch x:Name="DarkModeSwitch"  Toggled="DarkModeSwitch_Toggled" Margin="0,0,0,20"/>
             </HorizontalStackLayout>
 
-            <Button Text="Font Size" FontSize="18" WidthRequest="500" TextColor="{DynamicResource TextColor}" Margin="0,0,0,20"/>
+            
             <Button Text="Change Pin" FontSize="18" WidthRequest="500" Margin="0,0,0,20" TextColor="{DynamicResource TextColor}" Clicked="ChangePinButtonClicked" />
     </VerticalStackLayout>
         
