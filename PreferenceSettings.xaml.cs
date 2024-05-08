@@ -49,23 +49,21 @@ public partial class PreferenceSettings : ContentPage
     {
         bool isDarkMode = e.Value;
         ApplyDarkMode(isDarkMode);
+        Preferences.Set("IsDarkModeEnabled", isDarkMode);
     }
     private void ApplyDarkMode(bool isDarkMode)
     {
-        Preferences.Set("DarkModeEnabled", isDarkMode);
         if (isDarkMode)
         {
-            // Load Dark theme resource dictionary
-            ResourceDictionary darkTheme = new Dark();
-            Application.Current.Resources.MergedDictionaries.Clear();
-            Application.Current.Resources.MergedDictionaries.Add(darkTheme);
+            // Apply dark mode styles
+            App.Current.Resources["BackgroundColor"] = App.Current.Resources["DarkModeBackgroundColor"];
+            App.Current.Resources["TextColor"] = App.Current.Resources["DarkModeTextColor"];
         }
         else
         {
-            // Load Light theme or other theme resource dictionary
-            ResourceDictionary lightTheme = new Light();
-            Application.Current.Resources.MergedDictionaries.Clear();
-            Application.Current.Resources.MergedDictionaries.Add(lightTheme);
+            // Apply light mode styles
+            App.Current.Resources["BackgroundColor"] = App.Current.Resources["LightModeBackgroundColor"];
+            App.Current.Resources["TextColor"] = App.Current.Resources["LightModeTextColor"];
         }
     }
 }

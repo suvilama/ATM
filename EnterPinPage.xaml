@@ -17,16 +17,16 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Text="Home" FontSize="18" HorizontalOptions="Start" />
-        <Label Grid.Row="0" Grid.Column="2" Text="Settings" FontSize="18" HorizontalOptions="End" />
+        <Label Grid.Row="0" Grid.Column="0" Text="Home" TextColor="{DynamicResource TextColor}" FontSize="18" HorizontalOptions="Start" />
+        <Label Grid.Row="0" Grid.Column="2" Text="Settings" TextColor="{DynamicResource TextColor}" FontSize="18" HorizontalOptions="End" />
 
         <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="Center">
-            <Label Text="John Doe" FontSize="24" HorizontalOptions="Center" />
-            <Label Text="Enter your Pin" FontSize="18" HorizontalOptions="Center" Margin="0,0,0,20" />
-            <Entry x:Name="pinEntry" Keyboard="Numeric" FontSize="18" WidthRequest="200" HorizontalOptions="Center" />
+            <Label Text="John Doe" FontSize="24" HorizontalOptions="Center" TextColor="{DynamicResource TextColor}" />
+            <Label Text="Enter your Pin" FontSize="18" HorizontalOptions="Center" TextColor="{DynamicResource TextColor}" Margin="0,0,0,20" />
+            <Entry x:Name="pinEntry" Keyboard="Numeric" FontSize="18" WidthRequest="200" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" />
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
-                <Button Text="Cancel" Clicked="CancelButtonClicked" FontSize="18" Margin="0,0,20,0" />
-                <Button Text="Confirm" Clicked="ConfirmButtonClicked" FontSize="18" />
+                <Button Text="Cancel" Clicked="CancelButtonClicked" TextColor="{DynamicResource TextColor}" FontSize="18" Margin="0,0,20,0" />
+                <Button Text="Confirm" Clicked="ConfirmButtonClicked" TextColor="{DynamicResource TextColor}" FontSize="18" />
             </StackLayout>
         </StackLayout>
 

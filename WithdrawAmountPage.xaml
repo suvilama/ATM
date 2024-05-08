@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ATM.WithdrawAmountPage"
-             Title="WithdrawAmountPage">
+             Title="Withdrawal"
+             BackgroundColor="{DynamicResource BackgroundColor}">
 
-    <Grid Padding="20" BackgroundColor="#97c5de">
+    <Grid Padding="20" >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -17,16 +18,16 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Button  Grid.Row="0" Grid.Column="0" Text="Home" Clicked="Homepage" FontSize="15" HorizontalOptions="Start"/>
-        <Button Grid.Row="0" Grid.Column="2" Text="Settings" Clicked="Settingspage" FontSize="15" HorizontalOptions="End" />
+        <Button  Grid.Row="0" Grid.Column="0" Text="Home" Clicked="Homepage" TextColor="{DynamicResource TextColor}" FontSize="15" HorizontalOptions="Start"/>
+        <Button Grid.Row="0" Grid.Column="2" Text="Settings" Clicked="Settingspage" TextColor="{DynamicResource TextColor}" FontSize="15" HorizontalOptions="End" />
 
         <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="Center">
-            <Label x:Name="GreetingLabel" Text="{Binding GreetingLabel}" FontSize="24" HorizontalOptions="Center" />
-            <Label Text="Enter the amount you wish to withdrawal" FontSize="18" HorizontalOptions="Center" Margin="0,0,0,20" />
-            <Entry x:Name="withdrawAmountEntry" Keyboard="Numeric" FontSize="18" WidthRequest="200" HorizontalOptions="Center" />
+            
+            <Label Text="Enter the amount you wish to withdrawal" FontSize="25"  TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" Margin="0,0,0,20" />
+            <Entry x:Name="withdrawAmountEntry" Keyboard="Numeric" FontSize="18" TextColor="{DynamicResource TextColor}" WidthRequest="200" HorizontalOptions="Center" />
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
-                <Button Text="Cancel" Clicked="CancelButtonClicked" FontSize="18" Margin="0,0,20,0" />
-                <Button Text="Confirm" Clicked="ConfirmButtonClicked" FontSize="18" />
+                <Button Text="Cancel" TextColor="{DynamicResource TextColor}" Clicked="CancelButtonClicked" FontSize="18" Margin="0,0,20,0" />
+                <Button Text="Confirm" TextColor="{DynamicResource TextColor}" Clicked="ConfirmButtonClicked" FontSize="18" />
             </StackLayout>
         </StackLayout>
 

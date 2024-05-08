@@ -21,10 +21,7 @@ namespace ATM
             User existingUser = await App.Database.GetUserAsync(_phoneNumber);
 
             // Update the greeting label with the user's name if the user exists
-            if (existingUser != null)
-            {
-                GreetingLabel.Text = $"{existingUser.Name}";
-            }
+          
         }
         private async void ConfirmButtonClicked(object sender, EventArgs e)
         {

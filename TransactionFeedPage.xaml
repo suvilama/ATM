@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ATM.TransactionFeedPage"
-             Title="TransactionFeedPage">
+             Title="Transactions"
+             BackgroundColor="{DynamicResource BackgroundColor}">
 
 
-    <Grid Padding="20" BackgroundColor="#97c5de">
+    <Grid Padding="20" >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="50" />
@@ -19,11 +20,11 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Button  Grid.Row="0" Grid.Column="0" Text="Home" Clicked="Homepage" FontSize="15" HorizontalOptions="Start"/>
-        <Button Grid.Row="0" Grid.Column="2" Text="Settings" Clicked="Settingspage" FontSize="15" HorizontalOptions="End" />
+        <Button  Grid.Row="0" Grid.Column="0" TextColor="{DynamicResource TextColor}" Text="Home" Clicked="Homepage" FontSize="15" HorizontalOptions="Start"/>
+        <Button Grid.Row="0" Grid.Column="2" TextColor="{DynamicResource TextColor}" Text="Settings" Clicked="Settingspage" FontSize="15" HorizontalOptions="End" />
 
-        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" x:Name="GreetingLabel" Text="{Binding GreetingLabel}" FontSize="24" HorizontalOptions="Center" />
-        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Text="Transaction Feed" FontSize="22" HorizontalOptions="Center" Margin="0,0,0,0" />
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" x:Name="GreetingLabel" Text="{Binding GreetingLabel}" TextColor="{DynamicResource TextColor}" FontSize="24" HorizontalOptions="Center" />
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Text="Transaction Feed" FontSize="30" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" Margin="0,0,0,0" />
 
         <!-- ListView to display transaction feed -->
         <ListView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding DepositTransactions}" x:Name="TransactionListView">
@@ -31,13 +32,13 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="10">
-                            <Label Text="{Binding TransactionType}" FontSize="18" />
+                            <Label Text="{Binding TransactionType}" FontSize="18" TextColor="{DynamicResource TextColor}" />
                             <HorizontalStackLayout>
-                                <Label Text="{Binding Sign}" FontSize= "16" />
-                                <Label Text="$ " FontSize= "16" />
-                                <Label Text="{Binding Amount}" FontSize="16" />
+                                <Label Text="{Binding Sign}" FontSize= "16" TextColor="{DynamicResource TextColor}" />
+                                <Label Text="$ " FontSize= "16" TextColor="{DynamicResource TextColor}" />
+                                <Label Text="{Binding Amount}" FontSize="16" TextColor="{DynamicResource TextColor}" />
                             </HorizontalStackLayout>
-                            <Label Text="{Binding Date}" FontSize="14" />
+                            <Label Text="{Binding Date}" FontSize="14" TextColor="{DynamicResource TextColor}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

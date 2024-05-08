@@ -2,9 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ATM.OperationSelectionPage"
-            >
+             Title="Home"
+            BackgroundColor="{DynamicResource BackgroundColor}"
+             >
 
-    <Grid Padding="20" BackgroundColor="#97c5de">
+    <Grid Padding="20" >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -16,25 +18,25 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Button  Grid.Row="0" Grid.Column="0" Text="Home" Clicked="Homepage" FontSize="15" HorizontalOptions="Start"/>
-        <Button Grid.Row="0" Grid.Column="2" Text="Settings" Clicked="Settingspage" FontSize="15" HorizontalOptions="End" />
+        
+        <Button Grid.Row="0" Grid.Column="2" Text="Settings" TextColor="{DynamicResource TextColor}" Clicked="Settingspage" FontSize="15" HorizontalOptions="End" />
 
        
 
         <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="Center">
-            <Label x:Name="GreetingLabel" Text="{Binding GreetingLabel}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"  FontSize="24" HorizontalOptions="Center" Margin="0,0,0, 20" />
-            <Label Text="Account Balance:" FontSize="22" HorizontalOptions="Center" Margin="0,0,0,20" />
+            <Label x:Name="GreetingLabel" Text="{Binding GreetingLabel}" Grid.Row="1" TextColor="{DynamicResource TextColor}" Grid.Column="0" Grid.ColumnSpan="3"  FontSize="24" HorizontalOptions="Center" Margin="0,0,0, 20" />
+            <Label Text="Account Balance:" FontSize="22" HorizontalOptions="Center" TextColor="{DynamicResource TextColor}" Margin="0,0,0,20" />
             <HorizontalStackLayout HorizontalOptions="Center">
-                <Label Text="$" FontSize="50"  Margin="0,0,0,20" />
-                <Label x:Name="BalanceLabel" Text="{Binding BalanceLabel}" FontSize="50"  Margin="0,0,0,20" />
+                <Label Text="$" FontSize="50" TextColor="{DynamicResource TextColor}"  Margin="0,0,0,20" />
+                <Label x:Name="BalanceLabel" Text="{Binding BalanceLabel}" FontSize="50" TextColor="{DynamicResource TextColor}"  Margin="0,0,0,20" />
 
 
             </HorizontalStackLayout>
-            
-            <Label Text="What would you like to do today?" FontSize="22" HorizontalOptions="Center" Margin="0,0,0,20" />
-            <Button Text="Deposit" Clicked="DepositButtonClicked" FontSize="18" Margin="0,0,0,10" />
-            <Button Text="Withdrawal" Clicked="WithdrawalButtonClicked" FontSize="18" Margin="0,0,0,10" />
-            <Button Text="Transaction Feed" Clicked="TransactionFeedButtonClicked" FontSize="18" Margin="0,0,0,10" />
+
+            <Label Text="What would you like to do today?" FontSize="22" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" Margin="0,0,0,20" />
+            <Button Text="Deposit" Clicked="DepositButtonClicked" TextColor="{DynamicResource TextColor}" FontSize="18" Margin="0,0,0,10" />
+            <Button Text="Withdrawal" Clicked="WithdrawalButtonClicked" TextColor="{DynamicResource TextColor}" FontSize="18" Margin="0,0,0,10" />
+            <Button Text="Transaction Feed" Clicked="TransactionFeedButtonClicked" TextColor="{DynamicResource TextColor}" FontSize="18" Margin="0,0,0,10" />
             
         </StackLayout>
 

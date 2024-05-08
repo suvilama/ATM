@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ATM.TransactionSuccessPage"
-             Title="TransactionSuccessPage">
+             
+              BackgroundColor="{DynamicResource BackgroundColor}">
 
 
 
 
-    <Grid Padding="20" BackgroundColor="#97c5de">
+    <Grid Padding="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -19,8 +20,8 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-            <Button  Grid.Row="0" Grid.Column="0" Text="Home" Clicked="Homepage" FontSize="15" HorizontalOptions="Start"/>
-        <Button Grid.Row="0" Grid.Column="2" Text="Settings" Clicked="Settingspage" FontSize="15" HorizontalOptions="End" />
+        <Button  Grid.Row="0" Grid.Column="0" Text="Home" TextColor="{DynamicResource TextColor}" Clicked="Homepage" FontSize="15" HorizontalOptions="Start"/>
+        <Button Grid.Row="0" Grid.Column="2" Text="Settings" TextColor="{DynamicResource TextColor}" Clicked="Settingspage" FontSize="15" HorizontalOptions="End" />
 
       
 
@@ -28,10 +29,12 @@
         <Label Grid.Row="0" Grid.Column="2" Text="Settings" FontSize="18" HorizontalOptions="End" />-->
 
         <VerticalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center">
-            <Label x:Name="GreetingLabel" Text="{Binding GreetingLabel}" FontSize="24" HorizontalOptions="Center" />
-            <Label Text="Thank you!"  FontSize="32" HorizontalOptions="Center" Margin="0,20,0,0" />
-            <Image Source="C:\Users\samue\Source\Repos\ATMm\Resources\Images\checkmark.svg" HeightRequest="50" WidthRequest="50" Margin="0,20,0,0" />
-            <Label Text="Your transaction is successful."  FontSize="18" HorizontalOptions="Center" Margin="0,20,0,0" />
+            
+            
+            <Label Text="Thank you!"  FontSize="32" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" Margin="0,20,0,0" />
+            <Label x:Name="GreetingLabel" Text="{Binding GreetingLabel}" TextColor="{DynamicResource TextColor}" FontSize="24" HorizontalOptions="Center" />
+            <Image Source="C:\Users\MaddoxElarton\Source\Repos\ATMm\Resources\Images\checkmark.svg" HeightRequest="50" WidthRequest="50" Margin="0,20,0,0" />
+            <Label Text="Your transaction is successful." TextColor="{DynamicResource TextColor}"  FontSize="18" HorizontalOptions="Center" Margin="0,20,0,0" />
             
         </VerticalStackLayout>
     </Grid>

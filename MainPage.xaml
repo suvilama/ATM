@@ -1,24 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ATM.MainPage">
+             x:Class="ATM.MainPage"
+              BackgroundColor="{DynamicResource BackgroundColor}">
+    
 
-    <VerticalStackLayout Padding="20" BackgroundColor="#97c5de">
-        <Label Text="Welcome to Cash Flow ATM" FontSize="24" HorizontalOptions="Center" />
-        <Label Text="Please Add Your Login Details!" FontSize="18" HorizontalOptions="Center" Margin="0,20,0,40" />
+    <VerticalStackLayout Padding="20" >
+        <Label Text="Welcome to Cash Flow ATM" FontSize="24" HorizontalOptions="Center" TextColor="{DynamicResource TextColor}" />
+        <Label Text="Please Add Your Login Details!" FontSize="18" HorizontalOptions="Center" Margin="0,20,0,40" TextColor="{DynamicResource TextColor}" />
 
-        <Entry x:Name="phoneNumberEntry" Placeholder="Phone number" WidthRequest="800"/>
-        <Entry x:Name="pinEntry" Placeholder="PIN" IsPassword="true" WidthRequest="800"/>
+        <Entry x:Name="phoneNumberEntry" Placeholder="Phone number" WidthRequest="800" TextColor="{DynamicResource TextColor}"/>
+        <Entry x:Name="pinEntry" Placeholder="PIN" IsPassword="true" WidthRequest="800" TextColor="{DynamicResource TextColor}"/>
 
-        <Button Text="Log In" Clicked="LogInButtonClicked" VerticalOptions="EndAndExpand" Margin="0,40,0,0" WidthRequest="800" BackgroundColor="CornflowerBlue"/>
+        <Button Text="Log In" Clicked="LogInButtonClicked" VerticalOptions="EndAndExpand" TextColor="{DynamicResource TextColor}" Margin="0,40,0,0" WidthRequest="800" BackgroundColor="CornflowerBlue"/>
         
 
 
         <HorizontalStackLayout HorizontalOptions="Center" Padding="20" Spacing="10">
-            <Label Text="Don't Already Have an account? " VerticalOptions="Center" />
-            <Label Text="Sign Up!" TextColor="Blue">
+            <Label Text="Don't Already Have an account? " VerticalOptions="Center" TextColor="{DynamicResource TextColor}" />
+            <Label Text="Sign Up!" TextColor="Blue" >
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnLabelClicked"/>
+                    <TapGestureRecognizer Tapped="OnLabelClicked" />
                 </Label.GestureRecognizers>
             </Label>
 
